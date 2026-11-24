@@ -34,6 +34,6 @@ app.listen(PORT,()=>{
     console.log("Server is up and running on PORT: ",PORT);
 
     if(process.env.NODE_ENV === "production"){
-        jobob.start();
+        job.start();
     }
 })
