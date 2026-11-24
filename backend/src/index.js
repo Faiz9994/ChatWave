@@ -3,14 +3,14 @@ import cors from "cors";
 import "dotenv/config"
 import fs from "fs";
 import path from "path";
-import User from "./models/user.model.js";
 import { connectDB } from "./lib/db.js";
 import { clerkMiddleware } from '@clerk/express'
+import clerkWebhook from "./webhooks/clerk.webhook.js";
 import job from "./lib/cron.js";
 
 const app = express()
 const PORT = process.env.PORT
-const FRONTEND_URL = process.nextTick.FRONTEND_URL;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const publicDir = path.join(process.cwd(), "public");
 

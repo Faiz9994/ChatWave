@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
       headers: new Headers(req.headers),
       body: payload,
     });
+    
 
     // throws if the signature is wrong or the body was tampered with; only then do we trust evt.
     const evt = await verifyWebhook(request, { signingSecret });
