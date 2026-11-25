@@ -1,6 +1,6 @@
 import ImageKit, { toFile } from "@imagekit/nodejs";
 
-const imagekit = new ImageKit({ privateKey: process.env.IMAGEKIT_PRIVATE_KEY });
+let imagekit;
 
 function hasImageKitConfig() {
   return Boolean(process.env.IMAGEKIT_PRIVATE_KEY);
@@ -19,6 +19,14 @@ function createFileName(originalName = "upload") {
  * @see https://imagekit.io/docs/api-reference/upload-file/upload-file
  */
 async function uploadChatMedia(file) {
+  const privateKey = process.env.IMAGEKIT_PRIVATE_KEY;
+  if (!privateKey) {
+    throw new Error("IMAGEKIT_PRIVATE_KEY is required to upload chat media");
+  }
+
+  if (!imagekit) {
+    imagekit = new ImageKit({ privateKey });
+  }
   const fileName = createFileName(file.originalname);
 
   const result = await imagekit.files.upload({
