@@ -11,8 +11,18 @@
   },
   "dependencies": {
     "@clerk/react": "^6.19.5",
+    "@heroui/react": "^3.2.8",
+    "@heroui/styles": "^3.2.8",
+    "@tailwindcss/vite": "^4.3.5",
+    "axios": "^1.21.1",
+    "lucide-react": "^1.81.0",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "react-hot-toast": "^2.6.1",
+    "react-router": "^7.18.7",
+    "socket.io-client": "^4.8.4",
+    "tailwindcss": "^4.3.5",
+    "zustand": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
