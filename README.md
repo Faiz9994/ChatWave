@@ -136,6 +136,3 @@ npm start        # Start the source entry point
 - Restrict `FRONTEND_URL` to trusted origins.
 - Verify Clerk webhook signatures before syncing users.
 
-## License
-
-Add your preferred license here.
